@@ -9,10 +9,9 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class CommandServiceImpl implements CommandService {
     @Override
-    public String exec(String commandStr) {
+    public void exec(String commandStr) {
         log.info("运行的命令:{}", commandStr);
         String result = RuntimeUtil.execForStr(commandStr);
         log.info("运行结果:\n{}", result);
-        return result;
     }
 }

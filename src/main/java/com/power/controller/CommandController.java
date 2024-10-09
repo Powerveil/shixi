@@ -26,8 +26,8 @@ public class CommandController {
 
 
     @GetMapping("/exec")
-    public String exec(@RequestParam("commandStr") String commandStr) {
-        return commandService.exec(commandStr);
+    public void exec(@RequestParam("commandStr") String commandStr) {
+        commandService.exec(commandStr);
     }
     ///command/exec
 }

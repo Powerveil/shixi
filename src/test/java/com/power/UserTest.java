@@ -121,7 +121,6 @@ public class UserTest {
 
         shiXiLogService.updateBatchById(list1);
 
-
     }
 
 

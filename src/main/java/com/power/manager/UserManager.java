@@ -89,6 +89,8 @@ public class UserManager {
             userListVo.setTodaySuccess(todaySuccess);
 //            userListVo.setShiXiLogList(shiXiLogList);
             userListVo.setPassword(null);
+            String username = user.getUsername();
+            userListVo.setUsername(username.substring(username.length() - 4));
 
             result.add(userListVo);
         }

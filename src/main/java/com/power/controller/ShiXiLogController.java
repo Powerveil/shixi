@@ -39,7 +39,14 @@ public class ShiXiLogController {
         LambdaQueryWrapper<ShiXiLog> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(ShiXiLog::getUserId, userId);
         queryWrapper.orderByDesc(ShiXiLog::getCreateTime);
-        return Result.success(shiXiLogService.list(queryWrapper));
+
+        List<ShiXiLog> list = shiXiLogService.list(queryWrapper);
+        for (ShiXiLog shiXiLog : list) {
+            String username = shiXiLog.getUsername();
+            shiXiLog.setUsername(username.substring(username.length() - 4));
+        }
+
+        return Result.success(list);
     }
 
 }

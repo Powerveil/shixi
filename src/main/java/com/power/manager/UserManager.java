@@ -3,19 +3,23 @@ package com.power.manager;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.date.LocalDateTimeUtil;
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.symmetric.SymmetricCrypto;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.power.domain.ShiXiLog;
 import com.power.domain.User;
 import com.power.domain.vo.Result;
 import com.power.domain.vo.UserListVo;
+import com.power.limit.SlidingWindowRateLimiter;
 import com.power.service.ShiXiLogService;
 import com.power.service.UserService;
 import com.power.utils.AddressUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -32,6 +36,12 @@ public class UserManager {
 
     Map<String, String> superAdmin;
 
+    @Autowired
+    private SlidingWindowRateLimiter slidingWindowRateLimiter;
+
+    @Value("${me.whiteIPList}")
+    private List<String> whiteIPList;
+
 
     @PostConstruct
     public void init() {
@@ -41,7 +51,16 @@ public class UserManager {
         superAdmin = list.stream().collect(Collectors.toMap(User::getUsername, User::getPassword));
     }
 
-    public Result addUser(User user) {
+    public Result addUser(User user, HttpServletRequest request) {
+        String remoteHost = request.getRemoteHost();
+
+        if (!whiteIPList.contains(remoteHost)) {
+            Boolean access = slidingWindowRateLimiter.tryAcquire("add." + remoteHost, 5, 60);
+            if (!access) {
+                return Result.error("501", "操作次数太多了，请稍后重试！");
+            }
+        }
+
         user.setAddress(AddressUtil.getAddrByLocateStr(user.getLocation()));
 
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
@@ -91,6 +110,12 @@ public class UserManager {
             userListVo.setPassword(null);
             String username = user.getUsername();
             userListVo.setUsername(username.substring(username.length() - 4));
+            String realName = userListVo.getRealName();
+            if (StrUtil.isNotBlank(realName) && !"-".equals(realName)) {
+                StringBuilder desensitizationRealNam = new StringBuilder(realName);
+                desensitizationRealNam.setCharAt(realName.length() - 2, '*');
+                userListVo.setRealName(desensitizationRealNam.toString());
+            }
 
             result.add(userListVo);
         }

@@ -1,12 +1,16 @@
 package com.power.controller;
 
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.power.domain.ShiXiLog;
 import com.power.domain.vo.Result;
+import com.power.limit.SlidingWindowRateLimiter;
 import com.power.service.ShiXiLogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -16,6 +20,12 @@ public class ShiXiLogController {
 
     @Autowired
     private ShiXiLogService shiXiLogService;
+
+    @Value("${me.whiteIPList}")
+    private List<String> whiteIPList;
+
+    @Autowired
+    private SlidingWindowRateLimiter slidingWindowRateLimiter;
 
 
 //    @GetMapping("/list")
@@ -35,7 +45,18 @@ public class ShiXiLogController {
     }
 
     @GetMapping("/getByUserId/{userId}")
-    public Result getByUserId(@PathVariable("userId") Long userId) {
+    public Result getByUserId(@PathVariable("userId") Long userId, HttpServletRequest request) {
+        String remoteHost = request.getRemoteHost();
+        System.out.println(remoteHost);
+        System.out.println(whiteIPList);
+        if (!whiteIPList.contains(remoteHost)) {
+            Boolean access = slidingWindowRateLimiter.tryAcquire("getByUserId." + remoteHost, 20, 60);
+            if (!access) {
+                return Result.error("501", "操作次数太多了，请稍后重试！");
+            }
+        }
+
+
         LambdaQueryWrapper<ShiXiLog> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(ShiXiLog::getUserId, userId);
         queryWrapper.orderByDesc(ShiXiLog::getCreateTime);
@@ -44,6 +65,13 @@ public class ShiXiLogController {
         for (ShiXiLog shiXiLog : list) {
             String username = shiXiLog.getUsername();
             shiXiLog.setUsername(username.substring(username.length() - 4));
+
+            String realName = shiXiLog.getRealName();
+            if (StrUtil.isNotBlank(realName) && !"-".equals(realName)) {
+                StringBuilder desensitizationRealNam = new StringBuilder(realName);
+                desensitizationRealNam.setCharAt(realName.length() - 2, '*');
+                shiXiLog.setRealName(desensitizationRealNam.toString());
+            }
         }
 
         return Result.success(list);

@@ -6,6 +6,7 @@ import com.power.manager.UserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -44,8 +45,8 @@ public class UserController {
 //    }
 
     @PostMapping("/add")
-    public Result addUser(@RequestBody User user) {
-        return userManager.addUser(user);
+    public Result addUser(@RequestBody User user, HttpServletRequest request) {
+        return userManager.addUser(user, request);
     }
 
     @PutMapping("/modify")

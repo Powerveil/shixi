@@ -2,7 +2,6 @@ package com.power.service.impl;
 
 import cn.hutool.core.io.IORuntimeException;
 import cn.hutool.core.util.RuntimeUtil;
-import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONUtil;
 import com.power.domain.ShiXiLog;
 import com.power.domain.vo.Result;
@@ -37,8 +36,4 @@ public class CommandServiceImpl implements CommandService {
         }
     }
 
-//    public static void main(String[] args) {
-//        String str = "17630825698";
-//        System.out.println(str.substring(str.length() - 4));
-//    }
 }

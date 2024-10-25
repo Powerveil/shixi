@@ -4,7 +4,6 @@ package com.power;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.power.domain.ShiXiLog;
 import com.power.domain.User;
 import com.power.domain.vo.UserListVo;
@@ -63,10 +62,10 @@ public class UserTest {
         boolean b = userService.removeById(7);
     }
 
-    @Test
-    public void test05() {
-        myJob.testSchedule();
-    }
+//    @Test
+//    public void test05() {
+//        myJob.testSchedule();
+//    }
 
     @Test
     public void test06() {

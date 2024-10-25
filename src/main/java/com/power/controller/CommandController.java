@@ -1,8 +1,11 @@
 package com.power.controller;
 
 import cn.hutool.core.util.RuntimeUtil;
+import com.power.domain.User;
 import com.power.domain.vo.Result;
+import com.power.domain.vo.UserListVo;
 import com.power.limit.SlidingWindowRateLimiter;
+import com.power.manager.UserManager;
 import com.power.service.CommandService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/command")
@@ -26,6 +30,9 @@ public class CommandController {
 
     @Value("${me.whiteIPList}")
     private List<String> whiteIPList;
+
+    @Autowired
+    private UserManager userManager;
 
 
     @GetMapping("/test")
@@ -53,4 +60,27 @@ public class CommandController {
         return commandService.exec("node /root/deploy/shixi/test/xybSign-node/index.js" + result);
     }
     ///command/exec
+
+
+//    @GetMapping("/test2")
+//    public String test2() {
+//        List<UserListVo> userListVoList = (List<UserListVo>) userManager.userListLogs().getData();
+//        List<Long> userIdList = userListVoList.stream()
+//                // 今日未打卡成功
+//                .filter(item -> Boolean.FALSE.equals(item.getTodaySuccess()))
+//                // 启动自动签到功能
+//                .filter(item -> Boolean.TRUE.equals(item.getSign()))
+//                .map(User::getId)
+//                .collect(Collectors.toList());
+//
+//        if (userIdList.isEmpty()) {
+//            return "不需要执行";
+//        }
+//
+//        StringBuilder command = new StringBuilder("node /root/deploy/shixi/test/xybSign-node/index.js");
+//        for (Long userId : userIdList) {
+//            command.append(" ").append(userId);
+//        }
+//        return command.toString();
+//    }
 }

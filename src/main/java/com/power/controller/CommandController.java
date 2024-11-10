@@ -2,7 +2,7 @@ package com.power.controller;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.RuntimeUtil;
-import com.power.annotation.MyLimit;
+import com.power.annotation.IPLimit;
 import com.power.domain.User;
 import com.power.domain.vo.Result;
 import com.power.domain.vo.UserListVo;
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/command")
 @CrossOrigin
 @Slf4j
-@MyLimit(prefix = "command")
+@IPLimit(prefix = "command")
 public class CommandController {
 
     @Autowired
@@ -39,7 +39,7 @@ public class CommandController {
     }
 
     @PostMapping("/exec")
-    @MyLimit(prefix = "exec")
+    @IPLimit(prefix = "exec")
     public Result exec(List<Long> idList, HttpServletRequest request) {
         if (CollUtil.isEmpty(idList)) {
             Result.error("501", "请选择批量打卡的用户~");
@@ -61,7 +61,7 @@ public class CommandController {
 
 
     @GetMapping("/exec2/{id}")
-    @MyLimit(prefix = "batch", limit = 20, windowSize = 60)
+    @IPLimit(prefix = "batch", limit = 20, windowSize = 60)
     public Result exec(@PathVariable("id") Long id, HttpServletRequest request) {
         if (Objects.isNull(id)) {
             Result.error("501", "请选择打卡的用户~");

@@ -1,6 +1,6 @@
 package com.power.controller;
 
-import com.power.annotation.MyLimit;
+import com.power.annotation.IPLimit;
 import com.power.domain.User;
 import com.power.domain.vo.Result;
 import com.power.manager.UserManager;
@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 @CrossOrigin
-@MyLimit(prefix = "user")
+@IPLimit(prefix = "user")
 public class UserController {
 
     @Autowired
@@ -45,7 +45,7 @@ public class UserController {
 //    }
 
     @PostMapping("/add")
-    @MyLimit(prefix = "add")
+    @IPLimit(prefix = "add")
     public Result addUser(@RequestBody User user) {
         return userManager.addUser(user);
     }

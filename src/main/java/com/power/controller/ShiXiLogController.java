@@ -2,7 +2,7 @@ package com.power.controller;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.power.annotation.MyLimit;
+import com.power.annotation.IPLimit;
 import com.power.domain.ShiXiLog;
 import com.power.domain.vo.Result;
 import com.power.service.ShiXiLogService;
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/logs")
 @CrossOrigin
-@MyLimit(prefix = "logs")
+@IPLimit(prefix = "logs")
 public class ShiXiLogController {
 
     @Autowired
@@ -37,7 +37,7 @@ public class ShiXiLogController {
     }
 
     @GetMapping("/getByUserId/{userId}")
-    @MyLimit(prefix = "getByUserId", limit = 20, windowSize = 60)
+    @IPLimit(prefix = "getByUserId", limit = 20, windowSize = 60)
     public Result getByUserId(@PathVariable("userId") Long userId) {
         LambdaQueryWrapper<ShiXiLog> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(ShiXiLog::getUserId, userId);

@@ -1,7 +1,7 @@
 package com.power.aop;
 
 
-import com.power.annotation.MyLimit;
+import com.power.annotation.IPLimit;
 import com.power.domain.vo.Result;
 import com.power.limit.SlidingWindowRateLimiter;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +30,7 @@ public class LimitAspect {
     @Value("${me.whiteIPList}")
     private List<String> whiteIPList;
 
-    @Pointcut("@annotation(com.power.annotation.MyLimit)")
+    @Pointcut("@annotation(com.power.annotation.IPLimit)")
     public void pt() {}
 
     @Around("pt()")
@@ -39,15 +39,15 @@ public class LimitAspect {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = requestAttributes.getRequest();
 
-        MyLimit classMyLimit = getClassMyLimit(joinPoint);
-        MyLimit methodMyLimit = getMethodMyLimit(joinPoint);
+        IPLimit classIPLimit = getClassMyLimit(joinPoint);
+        IPLimit methodIPLimit = getMethodMyLimit(joinPoint);
 
         String remoteHost = request.getRemoteHost().replaceAll(":", ".");
 
         if (!whiteIPList.contains(remoteHost)) {
-            String key = (Objects.nonNull(classMyLimit) ? classMyLimit.prefix() + ":" : "") + methodMyLimit.prefix() + ":" + remoteHost;
-            int limit = methodMyLimit.limit();
-            int windowSize = methodMyLimit.windowSize();
+            String key = (Objects.nonNull(classIPLimit) ? classIPLimit.prefix() + ":" : "") + methodIPLimit.prefix() + ":" + remoteHost;
+            int limit = methodIPLimit.limit();
+            int windowSize = methodIPLimit.windowSize();
             Boolean access = slidingWindowRateLimiter.tryAcquire(key, limit, windowSize);
             if (!access) {
                 log.info("限流未通过!");
@@ -61,13 +61,13 @@ public class LimitAspect {
     }
 
 
-    private MyLimit getMethodMyLimit(ProceedingJoinPoint joinPoint) {
+    private IPLimit getMethodMyLimit(ProceedingJoinPoint joinPoint) {
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
-        MyLimit annotation = methodSignature.getMethod().getAnnotation(MyLimit.class);
+        IPLimit annotation = methodSignature.getMethod().getAnnotation(IPLimit.class);
         return annotation;
     }
 
-    private MyLimit getClassMyLimit(ProceedingJoinPoint joinPoint) {
-        return joinPoint.getTarget().getClass().getAnnotation(MyLimit.class);
+    private IPLimit getClassMyLimit(ProceedingJoinPoint joinPoint) {
+        return joinPoint.getTarget().getClass().getAnnotation(IPLimit.class);
     }
 }

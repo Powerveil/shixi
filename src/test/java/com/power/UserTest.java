@@ -15,9 +15,9 @@ import com.power.utils.AddressUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -92,8 +92,6 @@ public class UserTest {
         System.out.println(map);
         System.out.println(map.size());
 
-
-
         List<User> list = userService.list();
         for (User user : list) {
             map.forEach((k, v) -> {
@@ -122,5 +120,50 @@ public class UserTest {
 
     }
 
+
+    @Test
+    public void test09() {
+
+        //36000   3      0
+        //144000 10   2520
+        //300000 20  16920
+        //420000 25  31920
+        //660000 30  52920
+        //960000 35  85920
+        //960000 45 181920
+
+
+        BigDecimal basicSalary = new BigDecimal("10000");// todo
+
+        BigDecimal monthsNumber = new BigDecimal("12");
+//        BigDecimal extra = new BigDecimal("3");// todo
+
+        BigDecimal house = new BigDecimal("1500");
+        BigDecimal livingExpenses = new BigDecimal("1200");
+
+
+        BigDecimal wuxianrete = new BigDecimal("0.18");
+
+
+        System.out.println("年收入：" + basicSalary.multiply(monthsNumber));
+        BigDecimal multiply = basicSalary.multiply(new BigDecimal("1").subtract(wuxianrete));
+        System.out.println("五险一金后：" + multiply);
+
+
+        BigDecimal tax = new BigDecimal("0");
+
+        List<List<BigInteger>> list = CollUtil.newArrayList(
+                CollUtil.newArrayList(new BigInteger("36000"), new BigInteger("3"), new BigInteger("0")),
+                CollUtil.newArrayList(new BigInteger("144000"), new BigInteger("10"), new BigInteger("2520")),
+                CollUtil.newArrayList(new BigInteger("300000"), new BigInteger("20"), new BigInteger("16920")),
+                CollUtil.newArrayList(new BigInteger("420000"), new BigInteger("25"), new BigInteger("31920")),
+                CollUtil.newArrayList(new BigInteger("660000"), new BigInteger("30"), new BigInteger("52920")),
+                CollUtil.newArrayList(new BigInteger("960000"), new BigInteger("35"), new BigInteger("85920")),
+                CollUtil.newArrayList(new BigInteger("1000000000"), new BigInteger("45"), new BigInteger("181920"))
+        );
+
+
+
+    }
 
 }

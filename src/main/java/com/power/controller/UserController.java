@@ -1,17 +1,17 @@
 package com.power.controller;
 
+import com.power.annotation.MyLimit;
 import com.power.domain.User;
 import com.power.domain.vo.Result;
 import com.power.manager.UserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
 @RequestMapping("/user")
 @CrossOrigin
+@MyLimit(prefix = "user")
 public class UserController {
 
     @Autowired
@@ -45,8 +45,9 @@ public class UserController {
 //    }
 
     @PostMapping("/add")
-    public Result addUser(@RequestBody User user, HttpServletRequest request) {
-        return userManager.addUser(user, request);
+    @MyLimit(prefix = "add")
+    public Result addUser(@RequestBody User user) {
+        return userManager.addUser(user);
     }
 
     @PutMapping("/modify")

@@ -10,16 +10,12 @@ import com.power.domain.ShiXiLog;
 import com.power.domain.User;
 import com.power.domain.vo.Result;
 import com.power.domain.vo.UserListVo;
-import com.power.limit.SlidingWindowRateLimiter;
 import com.power.service.ShiXiLogService;
 import com.power.service.UserService;
 import com.power.utils.AddressUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -36,13 +32,6 @@ public class UserManager {
 
     Map<String, String> superAdmin;
 
-    @Autowired
-    private SlidingWindowRateLimiter slidingWindowRateLimiter;
-
-    @Value("${me.whiteIPList}")
-    private List<String> whiteIPList;
-
-
     @PostConstruct
     public void init() {
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
@@ -51,15 +40,7 @@ public class UserManager {
         superAdmin = list.stream().collect(Collectors.toMap(User::getUsername, User::getPassword));
     }
 
-    public Result addUser(User user, HttpServletRequest request) {
-        String remoteHost = request.getRemoteHost();
-
-        if (!whiteIPList.contains(remoteHost)) {
-            Boolean access = slidingWindowRateLimiter.tryAcquire("add." + remoteHost, 5, 60);
-            if (!access) {
-                return Result.error("501", "操作次数太多了，请稍后重试！");
-            }
-        }
+    public Result addUser(User user) {
 
         user.setAddress(AddressUtil.getAddrByLocateStr(user.getLocation()));
 

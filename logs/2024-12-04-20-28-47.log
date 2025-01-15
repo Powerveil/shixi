@@ -1,0 +1,84 @@
+2024-12-04 20:28:47,530 - f2 - INFO - 应用：douyin
+2024-12-04 20:28:47,539 - f2 - INFO - 模式：post
+2024-12-04 20:28:47,540 - f2 - INFO - 主配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-12-04 20:28:47,540 - f2 - INFO - 自定义配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-12-04 20:28:49,613 - f2 - INFO - 开始爬取用户：MS4wLjABAAAAJYD_ePMvob3dkicwzJMj01NF_yFG-QZnQOdSS9Edh3ozS-nbP4XFA1LcdhvhGMt4 发布的作品
+2024-12-04 20:28:49,614 - f2 - INFO - 开始爬取第 0 页
+2024-12-04 20:30:34,734 - f2 - ERROR - Traceback (most recent call last):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 254, in __aiter__
+    async for part in self._httpcore_stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 407, in __aiter__
+    raise exc from None
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 403, in __aiter__
+    async for part in self._stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 342, in __aiter__
+    raise exc
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 334, in __aiter__
+    async for chunk in self._connection._receive_response_body(**kwargs):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 203, in _receive_response_body
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\code\py-project\f2\f2\dl\base_downloader.py", line 65, in _download_chunks
+    async for chunk in response.aiter_bytes(get_chunk_size(content_length)):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 929, in aiter_bytes
+    async for raw_bytes in self.aiter_raw():
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 987, in aiter_raw
+    async for raw_stream_bytes in self.stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 149, in __aiter__
+    async for chunk in self._stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 253, in __aiter__
+    with map_httpcore_exceptions():
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+
+2024-12-04 20:30:34,742 - f2 - ERROR - 文件区块超时：
+2024-12-04 20:30:34,768 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:30:44,781 - f2 - INFO - 开始爬取第 1731640557000 页
+2024-12-04 20:30:48,245 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:30:58,246 - f2 - INFO - 开始爬取第 1729940649000 页
+2024-12-04 20:31:01,871 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:31:11,874 - f2 - INFO - 开始爬取第 1728188599000 页
+2024-12-04 20:31:15,500 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:31:25,505 - f2 - INFO - 开始爬取第 1726540451000 页
+2024-12-04 20:31:36,523 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:31:46,532 - f2 - INFO - 开始爬取第 1724729293000 页
+2024-12-04 20:31:50,031 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:32:00,035 - f2 - INFO - 开始爬取第 1722745278000 页
+2024-12-04 20:32:03,683 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:32:13,685 - f2 - INFO - 开始爬取第 1720944674000 页
+2024-12-04 20:32:17,364 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:32:27,378 - f2 - INFO - 开始爬取第 1719376116000 页
+2024-12-04 20:32:34,631 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:32:44,644 - f2 - INFO - 开始爬取第 1717750337000 页
+2024-12-04 20:32:48,898 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:32:58,902 - f2 - INFO - 开始爬取第 1715852259000 页
+2024-12-04 20:33:03,130 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:33:13,144 - f2 - INFO - 开始爬取第 1714381679000 页
+2024-12-04 20:33:17,412 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:33:27,427 - f2 - INFO - 开始爬取第 1713060066000 页
+2024-12-04 20:33:38,721 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:33:48,723 - f2 - INFO - 开始爬取第 1711192351000 页
+2024-12-04 20:33:52,731 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:34:02,744 - f2 - INFO - 开始爬取第 1704368622000 页
+2024-12-04 20:34:03,313 - f2 - INFO - 第 1704368622000 页没有找到作品
+2024-12-04 20:34:03,317 - f2 - INFO - 用户: MS4wLjABAAAAJYD_ePMvob3dkicwzJMj01NF_yFG-QZnQOdSS9Edh3ozS-nbP4XFA1LcdhvhGMt4 所有作品采集完毕
+2024-12-04 20:34:03,318 - f2 - INFO - 爬取结束，共爬取 265 个作品

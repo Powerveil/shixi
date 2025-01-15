@@ -21,38 +21,42 @@ public class F2Video {
 
 
     static {
-        map.put("https://v.douyin.com/iAnU6xLT", "我不是医生");
+//        map.put("https://v.douyin.com/iAnU6xLT", "我不是医生");
         map.put("https://v.douyin.com/iAndxtH8", "小Lin说");
         map.put("https://v.douyin.com/iAtouCdo", "阳老讲堂");
         map.put("https://v.douyin.com/iAtkgAXx", "银行小土豆");
         map.put("https://v.douyin.com/iAcf86qH", "未小知");
+        map.put("https://v.douyin.com/iAcPGG4U", "武主任【企业综合办】");
+        map.put("https://v.douyin.com/iDYBADUh", "盗圣-tyranoraptor");
+        map.put("https://v.douyin.com/iD6NSEop", "阳和平说事儿");
+        map.put("https://v.douyin.com/iDCu7mRU", "分析师Boden");
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException {
 
-//        map.forEach((k, v) -> {
-//            System.out.println("==========================================================");
-//            String commandStr = "f2 dy -M post -u " + k;
-//            System.out.println("正在操作：" + v);
-//            String result = RuntimeUtil.execForStr(commandStr);
-//            if (result.contains("所有作品采集完毕")) {
-//                System.out.println("执行成功😄");
-//            } else {
-//                System.out.println("执行失败🙁");
-//            }
-//        });
+        map.forEach((k, v) -> {
+            System.out.println("==========================================================");
+            String commandStr = "f2 dy -M post -u " + k;
+            System.out.println("正在操作：" + v);
+            String result = RuntimeUtil.execForStr(commandStr);
+            if (result.contains("所有作品采集完毕")) {
+                System.out.println("执行成功😄");
+            } else {
+                System.out.println("执行失败🙁");
+            }
+        });
 
 
-        System.out.println("==========================================================");
-        String commandStr = "f2 dy -M post -u " + "https://v.douyin.com/iAcPGG4U";
-        System.out.println("正在操作：" + "武主任【企业综合办】");
-        System.out.println("操作命令：" + commandStr);
-
-//        System.out.println(CharsetUtil.systemCharset());
-        String result = RuntimeUtil.execForStr(commandStr);
-        if (result.contains("所有作品采集完毕")) {
-            System.out.println("执行成功");
-        }
+//        System.out.println("==========================================================");
+//        String commandStr = "f2 dy -M post -u " + "https://v.douyin.com/iAcPGG4U";
+//        System.out.println("正在操作：" + "武主任【企业综合办】");
+//        System.out.println("操作命令：" + commandStr);
+//
+////        System.out.println(CharsetUtil.systemCharset());
+//        String result = RuntimeUtil.execForStr(commandStr);
+//        if (result.contains("所有作品采集完毕")) {
+//            System.out.println("执行成功");
+//        }
 //        System.out.println("操作结果：\n" + result);
 
 //        System.out.println(Arrays.toString(commandStr.getBytes()));

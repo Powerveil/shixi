@@ -1,0 +1,46 @@
+2024-12-04 20:35:04,486 - f2 - INFO - 应用：douyin
+2024-12-04 20:35:04,495 - f2 - INFO - 模式：post
+2024-12-04 20:35:04,496 - f2 - INFO - 主配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-12-04 20:35:04,496 - f2 - INFO - 自定义配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-12-04 20:35:06,626 - f2 - INFO - 开始爬取用户：MS4wLjABAAAA9KcmGhis4sBwy6Cle-R1N1mcKkmj4Om7n91l8FjEIqU 发布的作品
+2024-12-04 20:35:06,627 - f2 - INFO - 开始爬取第 0 页
+2024-12-04 20:35:19,215 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:35:29,228 - f2 - INFO - 开始爬取第 1731630435000 页
+2024-12-04 20:35:35,766 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:35:45,774 - f2 - INFO - 开始爬取第 1729900801000 页
+2024-12-04 20:35:48,283 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:35:58,287 - f2 - INFO - 开始爬取第 1728087609000 页
+2024-12-04 20:36:00,791 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:36:10,801 - f2 - INFO - 开始爬取第 1726293325000 页
+2024-12-04 20:36:12,124 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:36:22,136 - f2 - INFO - 开始爬取第 1724631526000 页
+2024-12-04 20:36:24,877 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:36:34,890 - f2 - INFO - 开始爬取第 1722743782000 页
+2024-12-04 20:36:38,426 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:36:48,434 - f2 - INFO - 开始爬取第 1721187000000 页
+2024-12-04 20:36:51,656 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:37:01,670 - f2 - INFO - 开始爬取第 1719459000000 页
+2024-12-04 20:37:04,789 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:37:14,784 - f2 - INFO - 开始爬取第 1717755254000 页
+2024-12-04 20:37:17,270 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:37:27,280 - f2 - INFO - 开始爬取第 1715810430000 页
+2024-12-04 20:37:35,030 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:37:45,037 - f2 - INFO - 开始爬取第 1714124018000 页
+2024-12-04 20:37:46,843 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:37:56,857 - f2 - INFO - 开始爬取第 1712276172000 页
+2024-12-04 20:37:59,328 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:38:09,333 - f2 - INFO - 开始爬取第 1710633587000 页
+2024-12-04 20:38:12,469 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:38:22,479 - f2 - INFO - 开始爬取第 1709088299000 页
+2024-12-04 20:38:25,576 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:38:35,581 - f2 - INFO - 开始爬取第 1707364819000 页
+2024-12-04 20:38:39,743 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:38:49,755 - f2 - INFO - 开始爬取第 1705622463000 页
+2024-12-04 20:38:52,250 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:39:02,261 - f2 - INFO - 开始爬取第 1703808574000 页
+2024-12-04 20:39:04,267 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:39:14,271 - f2 - INFO - 开始爬取第 1702252225000 页
+2024-12-04 20:39:16,270 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:39:26,274 - f2 - INFO - 开始爬取第 1700611565000 页
+2024-12-04 20:39:36,310 - f2 - ERROR - 请前往QA文档 https://johnserf-seed.github.io/f2/question-answer/qa.html 查看相关帮助
+2024-12-04 20:39:36,312 - f2 - ERROR - 请求端点超时。 链接：https://www.douyin.com/aweme/v1/web/aweme/post/?device_platform=webapp&aid=6383&channel=channel_pc_web&pc_client_type=1&version_code=190500&version_name=19.5.0&cookie_enabled=true&screen_width=1920&screen_height=1080&browser_language=zh-CN&browser_platform=Win32&browser_name=Edge&browser_version=122.0.0.0&browser_online=true&engine_name=Blink&engine_version=122.0.0.0&os_name=Windows&os_version=10&cpu_core_num=12&device_memory=8&platform=PC&downlink=10&effective_type=4g&round_trip_time=100&msToken=4oF-aGve9-Pvsj2Z8xqJbOGgDqrQK7iZHuXK8RXvjHXLG2Xt3wCTIfnG7bwV0-Opb_pdPJF84LBN5b_5_smuIyAZdj4guXATVlHViHSob9nun1BjUtrsM_NkeVmDzg==&max_cursor=1700611565000&count=20&sec_user_id=MS4wLjABAAAA9KcmGhis4sBwy6Cle-R1N1mcKkmj4Om7n91l8FjEIqU&a_bogus=Q7RqQDLIsV9sgEWG5vILfY3q6AH3YmeU0SVkMD2fwdfVfy39HMTI9exokFXvxtLjNG/pIeSjy4hbTr92rQAj83fUHWixWnQ2m6DDKl5Q5I0j53iruyR8ntgF4kU5Fee/-iI3xO7my75SKRt0AoKH-vIlO6ZCcHgOEisnOt8=，代理：{'http://': None, 'https://': None}，异常类名：DouyinCrawler，异常详细信息：

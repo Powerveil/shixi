@@ -1,0 +1,11 @@
+2024-12-02 12:42:49,558 - f2 - INFO - 应用：douyin
+2024-12-02 12:42:49,575 - f2 - INFO - 模式：post
+2024-12-02 12:42:49,576 - f2 - INFO - 主配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-12-02 12:42:49,577 - f2 - INFO - 自定义配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-12-02 12:42:50,886 - f2 - INFO - 开始爬取用户：MS4wLjABAAAAXI_p2XJdaEUKCa4jBW_So1dCvX2lV_RO1Gqo8b7N0H4f4is-TWrkgRjVNG44986L 发布的作品
+2024-12-02 12:42:50,888 - f2 - INFO - 开始爬取第 0 页
+2024-12-02 12:44:08,905 - f2 - INFO - 等待 10 秒后继续
+2024-12-02 12:44:18,923 - f2 - INFO - 开始爬取第 1667756977000 页
+2024-12-02 12:44:19,189 - f2 - INFO - 第 1667756977000 页没有找到作品
+2024-12-02 12:44:19,194 - f2 - INFO - 用户: MS4wLjABAAAAXI_p2XJdaEUKCa4jBW_So1dCvX2lV_RO1Gqo8b7N0H4f4is-TWrkgRjVNG44986L 所有作品采集完毕
+2024-12-02 12:44:19,195 - f2 - INFO - 爬取结束，共爬取 12 个作品

@@ -1,0 +1,139 @@
+2024-11-24 19:36:04,608 - f2 - INFO - 应用：douyin
+2024-11-24 19:36:04,628 - f2 - INFO - 模式：post
+2024-11-24 19:36:04,629 - f2 - INFO - 主配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-11-24 19:36:04,630 - f2 - INFO - 自定义配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-11-24 19:36:06,329 - f2 - INFO - 开始爬取用户：MS4wLjABAAAAQRNQx7KfzmjfhOFn8HO5Pgnvj2Ww6DbFDM6CwGtboMPkLVtScEU2RLVW-OQYdiHp 发布的作品
+2024-11-24 19:36:06,330 - f2 - INFO - 开始爬取第 0 页
+2024-11-24 19:38:21,077 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 19:38:31,093 - f2 - INFO - 开始爬取第 1730260800000 页
+2024-11-24 19:39:44,978 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 19:39:54,989 - f2 - INFO - 开始爬取第 1727838000000 页
+2024-11-24 19:41:23,525 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 19:41:33,541 - f2 - INFO - 开始爬取第 1725591600000 页
+2024-11-24 19:43:05,260 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 19:43:15,269 - f2 - INFO - 开始爬取第 1723089600000 页
+2024-11-24 19:46:39,702 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 19:46:49,706 - f2 - INFO - 开始爬取第 1720753200000 页
+2024-11-24 19:49:50,206 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 19:50:00,207 - f2 - INFO - 开始爬取第 1718247600000 页
+2024-11-24 19:52:55,027 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 19:53:05,043 - f2 - INFO - 开始爬取第 1716346800000 页
+2024-11-24 19:56:14,025 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 19:56:24,041 - f2 - INFO - 开始爬取第 1714532400000 页
+2024-11-24 19:57:50,273 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 19:58:00,285 - f2 - INFO - 开始爬取第 1712372400000 页
+2024-11-24 20:05:38,444 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:05:48,446 - f2 - INFO - 开始爬取第 1710471600000 页
+2024-11-24 20:06:57,919 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:07:07,938 - f2 - INFO - 开始爬取第 1708743600000 页
+2024-11-24 20:08:13,859 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:08:23,861 - f2 - INFO - 开始爬取第 1706932800000 页
+2024-11-24 20:10:38,340 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:10:48,343 - f2 - INFO - 开始爬取第 1705968000000 页
+2024-11-24 20:12:24,525 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:12:34,541 - f2 - INFO - 开始爬取第 1704945600000 页
+2024-11-24 20:13:45,005 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:13:55,016 - f2 - INFO - 开始爬取第 1703822400000 页
+2024-11-24 20:16:18,783 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:16:28,793 - f2 - INFO - 开始爬取第 1702612800000 页
+2024-11-24 20:17:53,082 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:18:03,101 - f2 - INFO - 开始爬取第 1701907200000 页
+2024-11-24 20:19:46,624 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:19:56,647 - f2 - INFO - 开始爬取第 1700539200000 页
+2024-11-24 20:21:52,781 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:22:02,824 - f2 - INFO - 开始爬取第 1698724800000 页
+2024-11-24 20:25:00,131 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:25:10,139 - f2 - INFO - 开始爬取第 1696478400000 页
+2024-11-24 20:26:29,833 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:26:39,842 - f2 - INFO - 开始爬取第 1694232000000 页
+2024-11-24 20:28:48,158 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:28:58,178 - f2 - INFO - 开始爬取第 1692403200000 页
+2024-11-24 20:30:44,362 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:30:54,370 - f2 - INFO - 开始爬取第 1691380800000 页
+2024-11-24 20:34:59,627 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:35:09,641 - f2 - INFO - 开始爬取第 1688961600000 页
+2024-11-24 20:48:37,832 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:48:47,836 - f2 - INFO - 开始爬取第 1687406400000 页
+2024-11-24 20:50:36,690 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:50:46,696 - f2 - INFO - 开始爬取第 1685592000000 页
+2024-11-24 20:52:14,251 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:52:24,262 - f2 - INFO - 开始爬取第 1683779873000 页
+2024-11-24 20:55:59,340 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 20:56:09,366 - f2 - INFO - 开始爬取第 1682049600000 页
+2024-11-24 21:00:11,139 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:00:21,151 - f2 - INFO - 开始爬取第 1680926400000 页
+2024-11-24 21:02:08,238 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:02:18,248 - f2 - INFO - 开始爬取第 1680062400000 页
+2024-11-24 21:03:45,059 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:03:55,065 - f2 - INFO - 开始爬取第 1679266800000 页
+2024-11-24 21:08:06,652 - f2 - ERROR - Traceback (most recent call last):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 254, in __aiter__
+    async for part in self._httpcore_stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 407, in __aiter__
+    raise exc from None
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 403, in __aiter__
+    async for part in self._stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 342, in __aiter__
+    raise exc
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 334, in __aiter__
+    async for chunk in self._connection._receive_response_body(**kwargs):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 203, in _receive_response_body
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 213, in _receive_event
+    with map_exceptions({h11.RemoteProtocolError: RemoteProtocolError}):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.RemoteProtocolError: peer closed connection without sending complete message body (received 70254592 bytes, expected 101500432)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\code\py-project\f2\f2\dl\base_downloader.py", line 65, in _download_chunks
+    async for chunk in response.aiter_bytes(get_chunk_size(content_length)):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 929, in aiter_bytes
+    async for raw_bytes in self.aiter_raw():
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 987, in aiter_raw
+    async for raw_stream_bytes in self.stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 149, in __aiter__
+    async for chunk in self._stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 253, in __aiter__
+    with map_httpcore_exceptions():
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: peer closed connection without sending complete message body (received 70254592 bytes, expected 101500432)
+
+2024-11-24 21:08:06,660 - f2 - ERROR - 文件区块下载失败：<Request('GET', 'https://v3-web.douyinvod.com/1e4a08e6677cb56f417ed45dbd60cf11/6743537b/video/tos/cn/tos-cn-ve-0015c800/o0kWk3WhzYeURUbIaBfyA7EzgRDUgAjlt3CAXO/?a=6383&ch=10010&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C3&cv=1&br=612&bt=612&cs=0&ds=3&ft=AJkeU_TERR0sTlC42NW2Nc0iPMgzbLwYwc1U_4CmOf_2Nv7TGW&mime_type=video_mp4&qs=0&rc=Z2hpNzc0OjY6OTVnPGc2OEBpajdrcGg6ZmxoajMzNGkzM0AzNF8wY19jNWAxMi41LmFgYSM1Yy9vcjRfal9gLS1kLTBzcw%3D%3D&btag=c0000e00038000&cquery=100o_101r_100B_100D_100J&dy_q=1732453436&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=20241124210356C147E403F7A18C0BC066')> Exception：peer closed connection without sending complete message body (received 70254592 bytes, expected 101500432)
+2024-11-24 21:18:30,827 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:18:40,864 - f2 - INFO - 开始爬取第 1678838400000 页
+2024-11-24 21:21:08,694 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:21:18,725 - f2 - INFO - 开始爬取第 1678420800000 页
+2024-11-24 21:24:30,792 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:24:40,823 - f2 - INFO - 开始爬取第 1677974400000 页
+2024-11-24 21:25:54,698 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:26:04,707 - f2 - INFO - 开始爬取第 1677495600000 页
+2024-11-24 21:29:28,152 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:29:38,166 - f2 - INFO - 开始爬取第 1677067200000 页
+2024-11-24 21:31:50,333 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:32:00,350 - f2 - INFO - 开始爬取第 1676692800000 页
+2024-11-24 21:33:20,873 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:33:30,886 - f2 - INFO - 开始爬取第 1676001600000 页
+2024-11-24 21:35:40,341 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:35:50,349 - f2 - INFO - 开始爬取第 1674446400000 页
+2024-11-24 21:38:09,302 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:38:19,322 - f2 - INFO - 开始爬取第 1672545600000 页
+2024-11-24 21:39:30,117 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:39:40,121 - f2 - INFO - 开始爬取第 1671163200000 页
+2024-11-24 21:40:40,133 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:40:50,154 - f2 - INFO - 开始爬取第 1665799336000 页
+2024-11-24 21:41:40,911 - f2 - INFO - 等待 10 秒后继续
+2024-11-24 21:41:50,917 - f2 - INFO - 开始爬取第 1665474395000 页
+2024-11-24 21:41:51,209 - f2 - INFO - 第 1665474395000 页没有找到作品
+2024-11-24 21:41:51,214 - f2 - INFO - 用户: MS4wLjABAAAAQRNQx7KfzmjfhOFn8HO5Pgnvj2Ww6DbFDM6CwGtboMPkLVtScEU2RLVW-OQYdiHp 所有作品采集完毕
+2024-11-24 21:41:51,215 - f2 - INFO - 爬取结束，共爬取 820 个作品

@@ -4,11 +4,13 @@ package com.power;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.power.domain.ShiXiLog;
 import com.power.domain.User;
 import com.power.domain.vo.UserListVo;
 import com.power.job.MyJob;
 import com.power.manager.UserManager;
+import com.power.service.DataNormalizerService;
 import com.power.service.ShiXiLogService;
 import com.power.service.UserService;
 import com.power.utils.AddressUtil;
@@ -20,6 +22,7 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @SpringBootTest
@@ -36,6 +39,9 @@ public class UserTest {
 
     @Autowired
     private ShiXiLogService shiXiLogService;
+
+    @Autowired
+    private DataNormalizerService dataNormalizerService;
 
     @Test
     public void test01() {
@@ -132,7 +138,6 @@ public class UserTest {
         //960000 35  85920
         //960000 45 181920
 
-
         BigDecimal basicSalary = new BigDecimal("10000");// todo
 
         BigDecimal monthsNumber = new BigDecimal("12");
@@ -141,14 +146,11 @@ public class UserTest {
         BigDecimal house = new BigDecimal("1500");
         BigDecimal livingExpenses = new BigDecimal("1200");
 
-
         BigDecimal wuxianrete = new BigDecimal("0.18");
-
 
         System.out.println("年收入：" + basicSalary.multiply(monthsNumber));
         BigDecimal multiply = basicSalary.multiply(new BigDecimal("1").subtract(wuxianrete));
         System.out.println("五险一金后：" + multiply);
-
 
         BigDecimal tax = new BigDecimal("0");
 
@@ -162,7 +164,25 @@ public class UserTest {
                 CollUtil.newArrayList(new BigInteger("1000000000"), new BigInteger("45"), new BigInteger("181920"))
         );
 
+    }
 
+    @Test
+    public void test10() {
+        List<User> list = userService.list();
+        list.stream()
+                .filter(item -> Objects.nonNull(item.getRealName()))
+                .forEach(user -> {
+                    LambdaUpdateWrapper<ShiXiLog> updateWrapper = new LambdaUpdateWrapper<>();
+                    updateWrapper
+                            .set(ShiXiLog::getRealName, user.getRealName())
+
+                            .eq(ShiXiLog::getUserId, user.getId())
+                            .eq(ShiXiLog::getRealName, "-");
+
+                    shiXiLogService.update(updateWrapper);
+                });
+
+        dataNormalizerService.dataNormalizer();
 
     }
 

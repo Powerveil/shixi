@@ -1,7 +1,9 @@
 package com.power.controller;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.lang.Validator;
 import cn.hutool.core.util.RuntimeUtil;
+import cn.hutool.json.JSONUtil;
 import com.power.annotation.IPLimit;
 import com.power.domain.User;
 import com.power.domain.vo.Result;
@@ -12,8 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
@@ -40,9 +41,9 @@ public class CommandController {
 
     @PostMapping("/exec")
     @IPLimit(prefix = "exec")
-    public Result exec(List<Long> idList, HttpServletRequest request) {
+    public Result exec(@RequestBody(required = false) List<Long> idList, HttpServletRequest request) {
         if (CollUtil.isEmpty(idList)) {
-            Result.error("501", "请选择批量打卡的用户~");
+            return Result.error("501", "请选择批量打卡的用户~");
         }
         log.info("批量打卡已启动");
 
@@ -50,8 +51,8 @@ public class CommandController {
         for (Long l : idList) {
             result.append(" ").append(l);
         }
-        Result exec = commandService.exec("node /root/deploy/shixi/test/xybSign-node/index.js" + result);
-        log.info("脚本运行结果：{}", exec);
+        Result exec = commandService.exec("node /root/deploy/shixi/front/xybSign-node/index.js" + result);
+        log.info("脚本运行结果：{}", JSONUtil.toJsonPrettyStr(exec));
         log.info("批量打卡已完成");
 
         return exec;
@@ -60,23 +61,69 @@ public class CommandController {
 
 
 
-    @GetMapping("/exec2/{id}")
+    @GetMapping("/exec2/{idStr}")
     @IPLimit(prefix = "batch", limit = 20, windowSize = 60)
-    public Result exec(@PathVariable("id") Long id, HttpServletRequest request) {
-        if (Objects.isNull(id)) {
-            Result.error("501", "请选择打卡的用户~");
+    public Result exec2(@PathVariable("idStr") String idStr, HttpServletRequest request) {
+        if (Objects.isNull(idStr)) {
+            return Result.error("501", "请选择打卡的用户~");
         }
         log.info("打卡已启动");
 
         StringBuilder result = new StringBuilder();
 
-        result.append(" ").append(id);
-        log.info("node /root/deploy/shixi/test/xybSign-node/index.js" + result);
-        Result exec = commandService.exec("node /root/deploy/shixi/test/xybSign-node/index.js" + result);
-        log.info("脚本运行结果：{}", exec);
+        String[] split = idStr.split(",");
+
+        Set<String> idList = new LinkedHashSet<>(Arrays.asList(split));
+
+        for (String id : idList) {
+            result.append(" ").append(id);
+        }
+
+        log.info("node /root/deploy/shixi/front/xybSign-node/index.js" + result);
+        Result exec = commandService.exec("node /root/deploy/shixi/front/xybSign-node/index.js" + result);
+        log.info("脚本运行结果：{}", JSONUtil.toJsonPrettyStr(exec));
         log.info("打卡已完成");
 
         return exec;
+    }
+
+
+    @GetMapping("/exec3/{iphoneStr}")
+    @IPLimit(prefix = "batch", limit = 20, windowSize = 60)
+    public Result exec3(@PathVariable("iphoneStr") String iphoneStr, HttpServletRequest request) {
+        if (Objects.isNull(iphoneStr)) {
+            return Result.error("501", "请选择打卡的用户~");
+        }
+        log.info("打卡已启动");
+
+
+        List<String> iphoneList = new ArrayList<>();
+
+        String[] split = iphoneStr.split(",");
+
+        for (String iphone : split) {
+            if (Validator.isMobile(iphone)) {
+                iphoneList.add(iphone);
+            }
+        }
+
+
+
+        List<User> userList = userManager.getUserListByIphoneList(iphoneList);
+
+        StringBuilder result = new StringBuilder();
+
+        for (User user : userList) {
+            result.append(" ").append(user.getId());
+        }
+
+        log.info("node /root/deploy/shixi/front/xybSign-node/index.js" + result);
+        Result exec = commandService.exec("node /root/deploy/shixi/front/xybSign-node/index.js" + result);
+        log.info("脚本运行结果：{}", JSONUtil.toJsonPrettyStr(exec));
+        log.info("打卡已完成");
+
+        return exec;
+//        return null;
     }
 
     @GetMapping("/execJob")
@@ -94,7 +141,7 @@ public class CommandController {
             return "不需要执行";
         }
 
-        StringBuilder command = new StringBuilder("node /root/deploy/shixi/test/xybSign-node/index.js");
+        StringBuilder command = new StringBuilder("node /root/deploy/shixi/front/xybSign-node/index.js");
         for (Long userId : userIdList) {
             command.append(" ").append(userId);
         }

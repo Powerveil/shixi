@@ -1,10 +1,12 @@
 package com.power.job;
 
+import cn.hutool.json.JSONUtil;
 import com.power.domain.User;
 import com.power.domain.vo.Result;
 import com.power.domain.vo.UserListVo;
 import com.power.manager.UserManager;
 import com.power.service.CommandService;
+import com.power.service.DataNormalizerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -22,9 +24,12 @@ public class MyJob {
     @Autowired
     private UserManager userManager;
 
+    @Autowired
+    private DataNormalizerService dataNormalizerService;
+
 //    @Scheduled(cron = "0 0 8 * * ?")
 //    public void testSchedule() {
-//        commandService.exec("node /root/deploy/shixi/test/xybSign-node/index.js");
+//        commandService.exec("node /root/deploy/shixi/front/xybSign-node/index.js");
 //    }
 
 
@@ -45,13 +50,21 @@ public class MyJob {
             return;
         }
 
-        StringBuilder command = new StringBuilder("node /root/deploy/shixi/test/xybSign-node/index.js");
+        StringBuilder command = new StringBuilder("node /root/deploy/shixi/front/xybSign-node/index.js");
         for (Long userId : userIdList) {
             command.append(" ").append(userId);
         }
         Result result = commandService.exec(command.toString());
-        log.info("脚本运行结果：{}", result);
+        log.info("脚本运行结果：{}", JSONUtil.toJsonPrettyStr(result));
         log.info("定时任务已结束");
+        // 清洗数据
+        dataNormalizerService.dataNormalizer();
+    }
+
+    @Scheduled(cron = "0 0 0,16,18,20,22,23 * * ? ")
+    public void testSchedule3() {
+        // 清洗数据
+        dataNormalizerService.dataNormalizer();
     }
 
 }

@@ -36,20 +36,14 @@ public class MyBeanUtils {
         System.out.println("===============================");
         System.out.println(test01);
         System.out.println(test02);
-        try {
-            copy(test01, test02);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
+        copy(test01, test02);
 
         System.out.println("===============================");
         System.out.println(test01);
         System.out.println(test02);
     }
 
-    public static void copy(Object source, Object target) throws IllegalAccessException, InvocationTargetException {
+    public static void copy(Object source, Object target) {
         List<String> fieldNameList = Arrays.stream(source.getClass().getDeclaredFields()).map(Field::getName).collect(Collectors.toList());
 
         for (String field : fieldNameList) {
@@ -57,9 +51,13 @@ public class MyBeanUtils {
             Method targetSet = findMethodByTypeAndName(target, "set", field);
             if (targetSet == null) continue;
 
-            Object sourceGet = findMethodByTypeAndName(source, "get", field).invoke(source);
+            try {
+                Object sourceGet = findMethodByTypeAndName(source, "get", field).invoke(source);
 
-            targetSet.invoke(target, sourceGet);
+                targetSet.invoke(target, sourceGet);
+            } catch (InvocationTargetException | IllegalAccessException ignored) {
+
+            }
         }
     }
 

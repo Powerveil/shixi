@@ -1,0 +1,109 @@
+2024-11-23 13:35:26,886 - f2 - INFO - 应用：douyin
+2024-11-23 13:35:26,897 - f2 - INFO - 模式：post
+2024-11-23 13:35:26,898 - f2 - INFO - 主配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-11-23 13:35:26,899 - f2 - INFO - 自定义配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-11-23 13:35:28,041 - f2 - INFO - 开始爬取用户：MS4wLjABAAAAunpkE2IXyHAxm4A24G5d1Cf5141pnZy8HwNR5f2-6pI_GYBVR-Pv23uFyfMPB_9I 发布的作品
+2024-11-23 13:35:28,042 - f2 - INFO - 开始爬取第 0 页
+2024-11-23 13:36:47,790 - f2 - ERROR - Traceback (most recent call last):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 254, in __aiter__
+    async for part in self._httpcore_stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 407, in __aiter__
+    raise exc from None
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 403, in __aiter__
+    async for part in self._stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 342, in __aiter__
+    raise exc
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 334, in __aiter__
+    async for chunk in self._connection._receive_response_body(**kwargs):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 203, in _receive_response_body
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\http11.py", line 213, in _receive_event
+    with map_exceptions({h11.RemoteProtocolError: RemoteProtocolError}):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.RemoteProtocolError: peer closed connection without sending complete message body (received 69730304 bytes, expected 150497816)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\code\py-project\f2\f2\dl\base_downloader.py", line 65, in _download_chunks
+    async for chunk in response.aiter_bytes(get_chunk_size(content_length)):
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 929, in aiter_bytes
+    async for raw_bytes in self.aiter_raw():
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 987, in aiter_raw
+    async for raw_stream_bytes in self.stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 149, in __aiter__
+    async for chunk in self._stream:
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 253, in __aiter__
+    with map_httpcore_exceptions():
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\power\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: peer closed connection without sending complete message body (received 69730304 bytes, expected 150497816)
+
+2024-11-23 13:36:47,798 - f2 - ERROR - 文件区块下载失败：<Request('GET', 'https://v3-web.douyinvod.com/92476c468bad7c5f9518b2e84239cb51/674197f9/video/tos/cn/tos-cn-ve-15/oUewAeYRGi5etjtS8Y4Isz7f9ZJN6wHeAgEplA/?a=6383&ch=10010&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C3&cv=1&br=1102&bt=1102&cs=0&ds=4&ft=AJkeU_TERR0sTlC42NW2Nc0iPMgzbLiRvc1U_4CmOf_2Nv7TGW&mime_type=video_mp4&qs=0&rc=NDQzOWloZGkzZGhnOjQ2O0BpajxpbW85cmVmdjMzNGkzM0A2MV5gXjZjNTQxYy02Li9eYSMzX2xnMmRrL3NgLS1kLTBzcw%3D%3D&btag=c0000e00038000&cquery=101r_100B_100H_100K_100o&dy_q=1732340127&feature_id=46a7bb47b4fd1280f3d3825bf2b29388&l=20241123133527953F1936B80A9D553C5E')> Exception：peer closed connection without sending complete message body (received 69730304 bytes, expected 150497816)
+2024-11-23 13:36:49,646 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:36:59,647 - f2 - INFO - 开始爬取第 1729762320000 页
+2024-11-23 13:37:02,883 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:37:12,893 - f2 - INFO - 开始爬取第 1727173405000 页
+2024-11-23 13:37:15,979 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:37:25,980 - f2 - INFO - 开始爬取第 1724383880000 页
+2024-11-23 13:37:29,268 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:37:39,283 - f2 - INFO - 开始爬取第 1722251403000 页
+2024-11-23 13:37:43,474 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:37:53,485 - f2 - INFO - 开始爬取第 1718789445000 页
+2024-11-23 13:37:56,907 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:38:06,919 - f2 - INFO - 开始爬取第 1714987804000 页
+2024-11-23 13:38:10,443 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:38:20,453 - f2 - INFO - 开始爬取第 1711443405000 页
+2024-11-23 13:38:24,043 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:38:34,045 - f2 - INFO - 开始爬取第 1705831201000 页
+2024-11-23 13:38:37,618 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:38:47,622 - f2 - INFO - 开始爬取第 1701177097000 页
+2024-11-23 13:38:51,109 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:39:01,125 - f2 - INFO - 开始爬取第 1696843974000 页
+2024-11-23 13:39:04,834 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:39:14,839 - f2 - INFO - 开始爬取第 1691229780000 页
+2024-11-23 13:39:18,462 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:39:28,464 - f2 - INFO - 开始爬取第 1686909602000 页
+2024-11-23 13:39:31,983 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:39:41,999 - f2 - INFO - 开始爬取第 1681956000000 页
+2024-11-23 13:39:45,260 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:39:55,272 - f2 - INFO - 开始爬取第 1674986403000 页
+2024-11-23 13:39:56,401 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:40:06,410 - f2 - INFO - 开始爬取第 1671365160000 页
+2024-11-23 13:40:07,332 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:40:17,348 - f2 - INFO - 开始爬取第 1666864869000 页
+2024-11-23 13:40:17,760 - f2 - INFO - 第 1666864869000 页没有找到作品
+2024-11-23 13:40:17,768 - f2 - INFO - 开始爬取第 1662717603000 页
+2024-11-23 13:40:18,682 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:40:28,684 - f2 - INFO - 开始爬取第 1659092440000 页
+2024-11-23 13:40:30,568 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:40:40,575 - f2 - INFO - 开始爬取第 1657359002000 页
+2024-11-23 13:40:43,804 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:40:53,808 - f2 - INFO - 开始爬取第 1655117278000 页
+2024-11-23 13:40:56,663 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:41:06,676 - f2 - INFO - 开始爬取第 1652523600000 页
+2024-11-23 13:41:09,304 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:41:19,317 - f2 - INFO - 开始爬取第 1650090584000 页
+2024-11-23 13:41:22,157 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:41:32,170 - f2 - INFO - 开始爬取第 1646908793000 页
+2024-11-23 13:41:34,137 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:41:44,151 - f2 - INFO - 开始爬取第 1643020798000 页
+2024-11-23 13:41:46,244 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:41:56,248 - f2 - INFO - 开始爬取第 1640690382000 页
+2024-11-23 13:41:56,754 - f2 - INFO - 第 1640690382000 页没有找到作品
+2024-11-23 13:41:56,762 - f2 - INFO - 开始爬取第 1634471040000 页
+2024-11-23 13:41:57,220 - f2 - INFO - 第 1634471040000 页没有找到作品
+2024-11-23 13:41:57,228 - f2 - INFO - 开始爬取第 1624798108000 页
+2024-11-23 13:41:58,224 - f2 - INFO - 等待 10 秒后继续
+2024-11-23 13:42:08,234 - f2 - INFO - 开始爬取第 1620442803000 页
+2024-11-23 13:42:08,646 - f2 - INFO - 第 1620442803000 页没有找到作品
+2024-11-23 13:42:08,650 - f2 - INFO - 用户: MS4wLjABAAAAunpkE2IXyHAxm4A24G5d1Cf5141pnZy8HwNR5f2-6pI_GYBVR-Pv23uFyfMPB_9I 所有作品采集完毕
+2024-11-23 13:42:08,651 - f2 - INFO - 爬取结束，共爬取 356 个作品

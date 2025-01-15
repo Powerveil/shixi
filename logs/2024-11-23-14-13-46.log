@@ -1,0 +1,6 @@
+2024-11-23 14:13:46,970 - f2 - INFO - 应用：douyin
+2024-11-23 14:13:46,979 - f2 - INFO - 模式：post
+2024-11-23 14:13:46,980 - f2 - INFO - 主配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-11-23 14:13:46,981 - f2 - INFO - 自定义配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-11-23 14:13:48,109 - f2 - INFO - 开始爬取用户：MS4wLjABAAAAmbcMWHzs4hV9sE8_Ja2FbrWSFhgd3kKDR2mbNOgquZU 发布的作品
+2024-11-23 14:13:48,110 - f2 - INFO - 开始爬取第 0 页

@@ -1,0 +1,34 @@
+2024-12-04 20:21:03,911 - f2 - INFO - 应用：douyin
+2024-12-04 20:21:03,925 - f2 - INFO - 模式：post
+2024-12-04 20:21:03,926 - f2 - INFO - 主配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-12-04 20:21:03,928 - f2 - INFO - 自定义配置路径：D:\code\py-project\f2\f2\conf\app.yaml
+2024-12-04 20:21:06,501 - f2 - INFO - 开始爬取用户：MS4wLjABAAAAunpkE2IXyHAxm4A24G5d1Cf5141pnZy8HwNR5f2-6pI_GYBVR-Pv23uFyfMPB_9I 发布的作品
+2024-12-04 20:21:06,503 - f2 - INFO - 开始爬取第 0 页
+2024-12-04 20:21:17,846 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:21:27,850 - f2 - INFO - 开始爬取第 1729933800000 页
+2024-12-04 20:21:39,753 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:21:49,767 - f2 - INFO - 开始爬取第 1727519520000 页
+2024-12-04 20:21:52,997 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:22:03,012 - f2 - INFO - 开始爬取第 1724837400000 页
+2024-12-04 20:22:06,873 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:22:16,887 - f2 - INFO - 开始爬取第 1722418200000 页
+2024-12-04 20:22:20,772 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:22:30,780 - f2 - INFO - 开始爬取第 1719394200000 页
+2024-12-04 20:22:36,418 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:22:46,419 - f2 - INFO - 开始爬取第 1715506200000 页
+2024-12-04 20:22:49,988 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:22:59,999 - f2 - INFO - 开始爬取第 1712136600000 页
+2024-12-04 20:23:03,800 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:23:13,812 - f2 - INFO - 开始爬取第 1706702778000 页
+2024-12-04 20:23:17,859 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:23:27,885 - f2 - INFO - 开始爬取第 1701676470000 页
+2024-12-04 20:23:35,597 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:23:45,601 - f2 - INFO - 开始爬取第 1697262130000 页
+2024-12-04 20:23:49,758 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:23:59,767 - f2 - INFO - 开始爬取第 1692426887000 页
+2024-12-04 20:24:04,030 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:24:14,040 - f2 - INFO - 开始爬取第 1688199300000 页
+2024-12-04 20:24:18,088 - f2 - INFO - 等待 10 秒后继续
+2024-12-04 20:24:28,102 - f2 - INFO - 开始爬取第 1682226657000 页
+2024-12-04 20:24:38,132 - f2 - ERROR - 请前往QA文档 https://johnserf-seed.github.io/f2/question-answer/qa.html 查看相关帮助
+2024-12-04 20:24:38,134 - f2 - ERROR - 请求端点超时。 链接：https://www.douyin.com/aweme/v1/web/aweme/post/?device_platform=webapp&aid=6383&channel=channel_pc_web&pc_client_type=1&version_code=190500&version_name=19.5.0&cookie_enabled=true&screen_width=1920&screen_height=1080&browser_language=zh-CN&browser_platform=Win32&browser_name=Edge&browser_version=122.0.0.0&browser_online=true&engine_name=Blink&engine_version=122.0.0.0&os_name=Windows&os_version=10&cpu_core_num=12&device_memory=8&platform=PC&downlink=10&effective_type=4g&round_trip_time=100&msToken=jxyax0akH0gS4xijOTyDWHWF6ZEYKOXn3m-szXvMXYTha5Tqsj2kEAbhhuZpKzLsplBavPmW5RMLkc-c5LG7sQBtwEExpHlt-1mp70MZKsjj85E_QY0mAxR3eUboKg==&max_cursor=1682226657000&count=20&sec_user_id=MS4wLjABAAAAunpkE2IXyHAxm4A24G5d1Cf5141pnZy8HwNR5f2-6pI_GYBVR-Pv23uFyfMPB_9I&a_bogus=DX8hMQzVpVokgjyT5vILfY3q6AH3YmeV0SVkMD2f0dfVtL39HMPR9exokFTvMwSjNG/pIeYjy4hbOp/krQcnM1wf7WhO/2AZmjSkKl12so0j53inCygDE0wi5hsAteNdsvHUiKi8w7cGSYmpWnAJ5kIlO62-zo0/9Xm=，代理：{'http://': None, 'https://': None}，异常类名：DouyinCrawler，异常详细信息：

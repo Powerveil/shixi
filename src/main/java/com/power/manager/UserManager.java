@@ -80,6 +80,7 @@ public class UserManager {
 
             LambdaQueryWrapper<ShiXiLog> queryWrapper = new LambdaQueryWrapper<>();
             queryWrapper.eq(ShiXiLog::getUserId, user.getId());
+            queryWrapper.eq(ShiXiLog::getSuccess, Boolean.TRUE);
             queryWrapper.orderByDesc(ShiXiLog::getCreateTime);
             queryWrapper.last("limit 1");
             ShiXiLog shiXiLog = shiXiLogService.getOne(queryWrapper);
@@ -185,5 +186,13 @@ public class UserManager {
             list.add(aes.encryptHex(k));
         });
         return Result.success(list);
+    }
+
+    public List<User> getUserListByIphoneList(List<String> iphoneList) {
+
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.in(User::getUsername, iphoneList)
+                        .orderByAsc(User::getId);
+        return userService.list(queryWrapper);
     }
 }
